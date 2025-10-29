@@ -42,7 +42,11 @@ body {
     list-style:
 /* استایل‌های صفحه محصولات */
 .products-main {
-    margin-top: 80px;
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}    
 }
 
 .products-hero {
