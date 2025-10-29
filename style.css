@@ -128,3 +128,95 @@ body {
     width: 100%;
     text-align: center;
 }
+/* استایل‌های سبد خرید */
+.cart-main {
+    margin-top: 100px;
+    padding: 2rem 0;
+}
+
+.cart-main h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.cart-items {
+    margin-bottom: 2rem;
+}
+
+.empty-cart {
+    text-align: center;
+    padding: 4rem 0;
+}
+
+.empty-cart p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: between;
+    align-items: center;
+    background: #FFFFFF;
+    border: 1px solid #E8E8E8;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 8px rgba(192, 192, 192, 0.2);
+}
+
+.item-info h4 {
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.item-price {
+    color: #00D4AA;
+    font-weight: bold;
+}
+
+.remove-btn {
+    background: #FF6B6B;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.remove-btn:hover {
+    background: #FF5252;
+}
+
+.cart-summary {
+    background: #F8F9FA;
+    border-radius: 16px;
+    padding: 2rem;
+}
+
+.summary-card h3 {
+    color: #333;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #E8E8E8;
+}
+
+.summary-row.total {
+    border-bottom: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #00D4AA;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 2px solid #00D4AA;
+}
