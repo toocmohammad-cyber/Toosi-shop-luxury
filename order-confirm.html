@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تأیید سفارش - فروشگاه توسی</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="glass-header">
+        <nav>
+            <div class="logo">
+                <h2>فروشگاه توسی</h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">خانه</a></li>
+                <li><a href="products.html">محصولات</a></li>
+                <li><a href="cart.html">سبد خرید (<span id="cart-count">0</span>)</a></li>
+                <li><a href="contact.html">تماس</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="order-confirm-main">
+        <div class="container">
+            <div class="success-card">
+                <div class="success-icon">✓</div>
+                <h1>سفارش شما با موفقیت ثبت شد!</h1>
+                <p class="order-number">کد رهگیری: <strong>TSH-9845-23</strong></p>
+                
+                <div class="order-details">
+                    <h3>مشخصات سفارش</h3>
+                    <div class="detail-row">
+                        <span>تاریخ سفارش:</span>
+                        <span id="order-date">در حال بارگذاری...</span>
+                    </div>
+                    <div class="detail-row">
+                        <span>روش ارسال:</span>
+                        <span>پیک فوری (۲۴ ساعته)</span>
+                    </div>
+                    <div class="detail-row">
+                        <span>آدرس تحویل:</span>
+                        <span>مشهد، بلوار وکیل‌آباد، مجتمع تجاری توس</span>
+                    </div>
+                    <div class="detail-row">
+                        <span>مبلغ قابل پرداخت:</span>
+                        <span class="total-amount" id="order-total">۰ تومان</span>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <a href="products.html" class="btn-luxury">بازگشت به فروشگاه</a>
+                    <a href="index.html" class="btn-secondary">صفحه اصلی</a>
+                </div>
+
+                <div class="support-note">
+                    <p>✅ سفارش شما در حال پردازش است. همکاران ما به زودی با شما تماس خواهند گرفت.</p>
+                    <p>📞 برای پیگیری: ۰۵۱-۳۸۴۵۱۲۳۴</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // نمایش تاریخ جاری
+            const now = new Date();
+            const options = { 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            };
+            document.getElementById('order-date').textContent = now.toLocaleDateString('fa-IR', options);
+
+            // نمایش مبلغ کل
+            document.getElementById('order-total').textContent = calculateTotalPrice();
+        });
+
+        function calculateTotalPrice() {
+            const prices = {
+                'جاروبرقی پیشرفته': 2500000,
+                'مایکروفر دیجیتال': 4200000,
+                'ماشین لباسشویی': 8500000,
+                'یخچال ساید بای ساید': 25000000
+            };
+
+            const total = window.cart.items.reduce((sum, item) => {
+                return sum + (prices[item] || 0);
+            }, 0);
+
+            return new Intl.NumberFormat('fa-IR').format(total) + ' تومان';
+        }
+    </script>
+</body>
+</html>
