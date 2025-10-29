@@ -321,3 +321,107 @@ body {
     resize: vertical;
     min-height: 120px;
 }
+/* استایل‌های صفحه پرداخت */
+.checkout-main {
+    margin-top: 100px;
+    padding: 2rem 0;
+}
+
+.checkout-steps {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+    gap: 2rem;
+}
+
+.step {
+    padding: 1rem 2rem;
+    background: #F8F9FA;
+    border-radius: 8px;
+    color: #666;
+}
+
+.step.active {
+    background: #00D4AA;
+    color: white;
+}
+
+.checkout-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+}
+
+.checkout-form {
+    background: #FFFFFF;
+    border: 1px solid #E8E8E8;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 2px 8px rgba(192, 192, 192, 0.2);
+}
+
+.checkout-form h3 {
+    color: #333;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.delivery-options {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.delivery-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    border: 1px solid #E8E8E8;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.delivery-option:hover {
+    border-color: #00D4AA;
+}
+
+.order-summary {
+    background: #F8F9FA;
+    border-radius: 12px;
+    padding: 2rem;
+    height: fit-content;
+}
+
+.order-summary h3 {
+    color: #333;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.summary-items {
+    margin-bottom: 1.5rem;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #E8E8E8;
+}
+
+.summary-total {
+    border-top: 2px solid #00D4AA;
+    padding-top: 1rem;
+}
+
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #00D4AA;
+}
