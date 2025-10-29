@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>محصولات - فروشگاه توسی</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="glass-header">
+        <nav>
+            <div class="logo">
+                <h2>فروشگاه توسی</h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">خانه</a></li>
+                <li><a href="products.html">محصولات</a></li>
+                <li><a href="cart.html">سبد خرید (<span id="cart-count">0</span>)</a></li>
+                <li><a href="contact.html">تماس</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="products-main">
+        <section class="products-hero">
+            <div class="container">
+                <h1>محصولات ما</h1>
+                <p>با بهترین برندهای لوازم خانگی</p>
+            </div>
+        </section>
+
+        <section class="products-grid">
+            <div class="container">
+                <div class="products-container">
+                    <!-- محصول ۱ -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://via.placeholder.com/300x200?text=جاروبرقی" alt="جاروبرقی">
+                        </div>
+                        <div class="product-info">
+                            <h3>جاروبرقی پیشرفته</h3>
+                            <p class="product-description">جاروبرقی قدرتمند با فیلتر HEPA</p>
+                            <div class="product-price">
+                                <span class="current-price">۲,۵۰۰,۰۰۰ تومان</span>
+                            </div>
+                            <button class="btn-luxury add-to-cart" onclick="cart.addItem('جاروبرقی پیشرفته')">
+                                افزودن به سبد خرید
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- محصول ۲ -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://via.placeholder.com/300x200?text=مایکروفر" alt="مایکروفر">
+                        </div>
+                        <div class="product-info">
+                            <h3>مایکروفر دیجیتال</h3>
+                            <p class="product-description">مایکروفر ۳۰ لیتری با قابلیت گریل</p>
+                            <div class="product-price">
+                                <span class="current-price">۴,۲۰۰,۰۰۰ تومان</span>
+                            </div>
+                            <button class="btn-luxury add-to-cart" onclick="cart.addItem('مایکروفر دیجیتال')">
+                                افزودن به سبد خرید
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- محصول ۳ -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://via.placeholder.com/300x200?text=ماشین+لباسشویی" alt="ماشین لباسشویی">
+                        </div>
+                        <div class="product-info">
+                            <h3>ماشین لباسشویی</h3>
+                            <p class="product-description">لباسشویی ۷ کیلویی با مصرف بهینه انرژی</p>
+                            <div class="product-price">
+                                <span class="current-price">۸,۵۰۰,۰۰۰ تومان</span>
+                            </div>
+                            <button class="btn-luxury add-to-cart" onclick="cart.addItem('ماشین لباسشویی')">
+                                افزودن به سبد خرید
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- محصول ۴ -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://via.placeholder.com/300x200?text=یخچال" alt="یخچال">
+                        </div>
+                        <div class="product-info">
+                            <h3>یخچال ساید بای ساید</h3>
+                            <p class="product-description">یخچال ۶۰۰ لیتری با سیستم No Frost</p>
+                            <div class="product-price">
+                                <span class="current-price">۲۵,۰۰۰,۰۰۰ تومان</span>
+                            </div>
+                            <button class="btn-luxury add-to-cart" onclick="cart.addItem('یخچال ساید بای ساید')">
+                                افزودن به سبد خرید
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
