@@ -1,1 +1,129 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سبد خرید - فروشگاه توسی</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="glass-header">
+        <nav>
+            <div class="logo">
+                <h2>فروشگاه توسی</h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">خانه</a></li>
+                <li><a href="products.html">محصولات</a></li>
+                <li><a href="cart.html">سبد خرید (<span id="cart-count">0</span>)</a></li>
+                <li><a href="contact.html">تماس</a></li>
+            </ul>
+        </nav>
+    </header>
 
+    <main class="cart-main">
+        <div class="container">
+            <h1>سبد خرید شما</h1>
+            
+            <div class="cart-items" id="cart-items">
+                <!-- آیتم‌های سبد خرید اینجا نمایش داده می‌شوند -->
+                <div class="empty-cart" id="empty-cart">
+                    <p>سبد خرید شما خالی است</p>
+                    <a href="products.html" class="btn-luxury">مشاهده محصولات</a>
+                </div>
+            </div>
+
+            <div class="cart-summary" id="cart-summary" style="display: none;">
+                <div class="summary-card">
+                    <h3>خلاصه سفارش</h3>
+                    <div class="summary-row">
+                        <span>تعداد محصولات:</span>
+                        <span id="total-items">0</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>هزینه ارسال:</span>
+                        <span>رایگان</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>جمع کل:</span>
+                        <span id="total-price">0 تومان</span>
+                    </div>
+                    <a href="checkout.html" class="btn-luxury" style="width: 100%; text-align: center; margin-top: 1rem;">
+                        ادامه فرآیند خرید
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        // مدیریت نمایش سبد خرید
+        function updateCartDisplay() {
+            const cartItems = document.getElementById('cart-items');
+            const emptyCart = document.getElementById('empty-cart');
+            const cartSummary = document.getElementById('cart-summary');
+            const totalItems = document.getElementById('total-items');
+            const totalPrice = document.getElementById('total-price');
+
+            if (window.cart && window.cart.items.length > 0) {
+                emptyCart.style.display = 'none';
+                cartSummary.style.display = 'block';
+                
+                // نمایش آیتم‌ها
+                cartItems.innerHTML = window.cart.items.map((item, index) => `
+                    <div class="cart-item">
+                        <div class="item-info">
+                            <h4>${item}</h4>
+                            <span class="item-price">${getItemPrice(item)}</span>
+                        </div>
+                        <button class="remove-btn" onclick="removeFromCart(${index})">حذف</button>
+                    </div>
+                `).join('');
+
+                totalItems.textContent = window.cart.items.length;
+                totalPrice.textContent = calculateTotalPrice();
+            } else {
+                emptyCart.style.display = 'block';
+                cartSummary.style.display = 'none';
+            }
+        }
+
+        function getItemPrice(item) {
+            const prices = {
+                'جاروبرقی پیشرفته': '۲,۵۰۰,۰۰۰ تومان',
+                'مایکروفر دیجیتال': '۴,۲۰۰,۰۰۰ تومان', 
+                'ماشین لباسشویی': '۸,۵۰۰,۰۰۰ تومان',
+                'یخچال ساید بای ساید': '۲۵,۰۰۰,۰۰۰ تومان'
+            };
+            return prices[item] || '۰ تومان';
+        }
+
+        function calculateTotalPrice() {
+            const prices = {
+                'جاروبرقی پیشرفته': 2500000,
+                'مایکروفر دیجیتال': 4200000,
+                'ماشین لباسشویی': 8500000,
+                'یخچال ساید بای ساید': 25000000
+            };
+
+            const total = window.cart.items.reduce((sum, item) => {
+                return sum + (prices[item] || 0);
+            }, 0);
+
+            return new Intl.NumberFormat('fa-IR').format(total) + ' تومان';
+        }
+
+        function removeFromCart(index) {
+            window.cart.items.splice(index, 1);
+            window.cart.updateCartCount();
+            updateCartDisplay();
+        }
+
+        // بارگذاری اولیه
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCartDisplay();
+        });
+    </script>
+</body>
+</html>
