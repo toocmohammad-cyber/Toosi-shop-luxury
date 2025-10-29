@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تماس با ما - فروشگاه توسی</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="glass-header">
+        <nav>
+            <div class="logo">
+                <h2>فروشگاه توسی</h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">خانه</a></li>
+                <li><a href="products.html">محصولات</a></li>
+                <li><a href="cart.html">سبد خرید (<span id="cart-count">0</span>)</a></li>
+                <li><a href="contact.html">تماس</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contact-main">
+        <div class="container">
+            <section class="contact-hero">
+                <h1>تماس با ما</h1>
+                <p>آماده پاسخگویی به سوالات شما هستیم</p>
+            </section>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="info-card">
+                        <h3>📞 تلفن تماس</h3>
+                        <p>۰۵۱-۳۸۴۵۱۲۳۴</p>
+                        <p>۰۹۱۵۱۲۳۴۵۶۷</p>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>📍 آدرس</h3>
+                        <p>مشهد، بلوار وکیل‌آباد، مجتمع تجاری توس</p>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>🕒 ساعات کاری</h3>
+                        <p>شنبه تا چهارشنبه: ۸:۰۰ - ۲۰:۰۰</p>
+                        <p>پنجشنبه: ۸:۰۰ - ۱۴:۰۰</p>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>✉️ ایمیل</h3>
+                        <p>info@toosishop.ir</p>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3>فرم تماس</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">نام کامل</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">شماره تماس</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">ایمیل</label>
+                            <input type="email" id="email" name="email">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">پیام شما</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-luxury">ارسال پیام</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('پیام شما با موفقیت ارسال شد! به زودی با شما تماس می‌گیریم.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
